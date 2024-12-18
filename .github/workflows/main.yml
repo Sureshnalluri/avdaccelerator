@@ -1,0 +1,39 @@
+name: AVD3 Deployment
+ 
+on:
+  workflow_dispatch:
+
+permissions:
+ id-token: write     
+ contents: read    
+jobs:
+  AVDDeployment:
+    name: AVD3 Deployment
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+         client-id: 2d744331-c049-4e36-adc5-98774408be5c
+         client-secret: dxX8Q~mxiPTPab7khTYd4VDqqBy6ZKR3bahelbXe
+         tenant-id: 94f60078-e092-4d05-8f93-b66303119d27
+         subscription-id: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
+         
+      - name: Deploy Bicep Template 
+        run: |
+              az deployment group create --resource-group "TR-AVD-Temp" --template-file "./workload/bicep/deploy-baseline.bicep" --parameters "./workload/bicep/parameters/deploy-baseline-param-test.bicepparam"
+               
+     # - name: Deploy
+      #  uses: azure/arm-deploy@v1
+       # with:
+        #  subscriptionId: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
+         # scope: 'subscription'
+         # region: centralindia
+         # template: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep
+         # parameters: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/params.bicepparam 
+         # failOnStdErr: false
+      
+        
+
+         

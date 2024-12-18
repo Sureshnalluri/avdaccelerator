@@ -22,7 +22,7 @@ jobs:
          
       - name: Deploy Bicep Template 
         run: |
-              az deployment sub create --resource-group 'AVD3' --location 'eastus2' --template-file "./workload/bicep/deploy-baseline.bicep" --parameters "./workload/bicep/parameters/deploy-baseline-param-test.bicepparam"
+              az deployment sub create --resource-group AVD3 --location eastus2 --template-file "./workload/bicep/deploy-baseline.bicep" --parameters "./workload/bicep/parameters/deploy-baseline-param-test.bicepparam"
                
      # - name: Deploy
       #  uses: azure/arm-deploy@v1

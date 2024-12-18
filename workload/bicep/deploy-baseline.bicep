@@ -10,8 +10,8 @@ targetScope = 'subscription'
 
 @minLength(2)
 @maxLength(4)
-@sys.description('The name of the resource group to deploy. (Default: AVD1)')
-param deploymentPrefix string = 'AVD1'
+@sys.description('The name of the resource group to deploy. (Default: AVD3)')
+param deploymentPrefix string = 'AVD3'
 
 @allowed([
   'Dev' // Development

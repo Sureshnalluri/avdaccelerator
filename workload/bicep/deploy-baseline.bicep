@@ -2,7 +2,7 @@ metadata name = 'AVD Accelerator - Baseline Deployment'
 metadata description = 'AVD Accelerator - Deployment Baseline'
 metadata owner = 'Azure/avdaccelerator'
 
-targetScope = 'Subscription'
+targetScope = 'subscription'
 
 // ========== //
 // Parameters //

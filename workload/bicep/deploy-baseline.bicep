@@ -83,7 +83,7 @@ param avdOuPath string = ''
   'Pooled'
 ])
 @sys.description('AVD host pool type. (Default: Pooled)')
-param avdHostPoolType string = 'Pooled'
+param avdHostPoolType string = 'Personal'
 
 @sys.description('Optional. The type of preferred application group type, default to Desktop Application Group.')
 @allowed([
@@ -147,13 +147,13 @@ param existingVnetPrivateEndpointSubnetResourceId string = ''
 param existingHubVnetResourceId string = ''
 
 @sys.description('AVD virtual network address prefixes. (Default: 10.10.0.0/23)')
-param avdVnetworkAddressPrefixes string = '10.10.0.0/23'
+param avdVnetworkAddressPrefixes string = '10.10.0.0/22'
 
 @sys.description('AVD virtual network subnet address prefix. (Default: 10.10.0.0/23)')
-param vNetworkAvdSubnetAddressPrefix string = '10.10.0.0/24'
+param vNetworkAvdSubnetAddressPrefix string = '10.10.1.0/24'
 
 @sys.description('private endpoints virtual network subnet address prefix. (Default: 10.10.1.0/27)')
-param vNetworkPrivateEndpointSubnetAddressPrefix string = '10.10.1.0/27'
+param vNetworkPrivateEndpointSubnetAddressPrefix string = '10.10.2.0/27'
 
 @sys.description('custom DNS servers IPs. (Default: "")')
 param customDnsIps string = ''
